@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>To Do</title>
+
+    <!-- STYLE & FAVICON -->
+    <script
+      src="https://kit.fontawesome.com/1a4bb73a43.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!---------------------------->
+
+    <!-- RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/media.css" rel="stylesheet" type="text/css" />
+    <!---------------------------->
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!---------------------------->
+
+    <!-- COLOR FOR HEADER BAR - MOBILE -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#" />
+    <!---------------------------->
+  </head>
+  <body>
+    <header>
+      <section class="all-header">
+        <div class="icon-resp">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="search">
+          <input type="search" placeholder="Find your tasks" />
+          
+          <i class="fas fa-search"></i>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <aside class="sidebar">
+        <section class="all-ul">
+          <ul class="list1">
+            <li id="all-tasks">
+              <i class="fas fa-clipboard-check"></i>All Tasks
+            </li>
+            <li id="no-status">
+              <i class="fas fa-clipboard-check"></i>No Status
+            </li>
+            <li id="doing">
+              <i class="fas fa-clipboard-check doing"></i>Doing
+            </li>
+            <li id="done"><i class="fas fa-clipboard-check done"></i>Done</li>
+          </ul>
+
+          <ul class="list2">
+            <li><i class="fas fa-info-circle about"></i>About</li>
+            <li><i class="fas fa-cog settings"></i>Settings</li>
+          </ul>
+        </section>
+      </aside>
+      <section>
+        <div class="containerLists">
+          <div id="cList1" class="containerList cList1">
+            <div class="state s1">
+              <h3>No Status</h3>
+              <div class="counter"><h4>5</h4></div>
+            </div>
+            <ul class="list l1">
+              <input type="text" placeholder="start task" />
+            </ul>
+            <button class="addBtn"><i class="fas fa-plus"></i></button>
+          </div>
+          <div id="cList2" class="containerList cList2">
+            <div class="state s2">
+              <h3>Doing</h3>
+              <div class="counter"><h4>5</h4></div>
+            </div>
+            <ul class="list l2">
+              <input type="text" placeholder="start task" />
+            </ul>
+            <button class="addBtn"><i class="fas fa-plus"></i></button>
+          </div>
+          <div id="cList3" class="containerList cList3">
+            <div class="state s3">
+              <h3>Done</h3>
+              <div class="counter"><h4>5</h4></div>
+            </div>
+            <ul class="list l3">
+              <input type="text" placeholder="start task" />
+            </ul>
+            <button class="addBtn"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

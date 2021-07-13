@@ -1,0 +1,47 @@
+@charset "utf-8";
+@media (max-width: 1200px) {
+  header .all-header {
+    width: 90%;
+    justify-content: space-between;
+  }
+  header .all-header .search {
+    width: auto;
+    margin: 14.5px 0;
+  }
+  main {
+    display: block;
+  }
+  .show-sidebar {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    height: calc(100% - 70px);
+    top: 70px;
+    border-bottom: solid 1px #ededed;
+  }
+
+  main section {
+    position: static;
+  }
+  main aside {
+    position: absolute;
+  }
+  main section .containerLists {
+    display: block;
+    position: static;
+  }
+  main section .containerList {
+    width: 90%;
+    margin: 20px auto;
+    width: 400px;
+    max-width: 400px;
+  }
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
