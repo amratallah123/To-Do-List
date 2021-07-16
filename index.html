@@ -43,7 +43,7 @@
         </div>
         <div class="search">
           <input type="search" placeholder="Find your tasks" />
-          
+
           <i class="fas fa-search"></i>
         </div>
       </section>
@@ -79,9 +79,43 @@
               <div class="counter"><h4>5</h4></div>
             </div>
             <ul class="list l1">
-              <input type="text" placeholder="start task" />
+              <div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash" id="0">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
+              <div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
+              <div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash" id="0">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
             </ul>
-            <button class="addBtn"><i class="fas fa-plus"></i></button>
+            <button type="submit" class="addBtn">
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
           <div id="cList2" class="containerList cList2">
             <div class="state s2">
@@ -89,7 +123,15 @@
               <div class="counter"><h4>5</h4></div>
             </div>
             <ul class="list l2">
-              <input type="text" placeholder="start task" />
+              <div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash"><i class="fas fa-trash"></i></button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
             </ul>
             <button class="addBtn"><i class="fas fa-plus"></i></button>
           </div>
@@ -99,15 +141,27 @@
               <div class="counter"><h4>5</h4></div>
             </div>
             <ul class="list l3">
-              <input type="text" placeholder="start task" />
+              <div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash"><i class="fas fa-trash"></i></button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
             </ul>
             <button class="addBtn"><i class="fas fa-plus"></i></button>
           </div>
         </div>
       </section>
     </main>
+    <button id="1" onClick="remove(this.id)">B1</button>
+    <button id="2" onClick="remove(this.id)">B2</button>
+    <button id="3" onClick="remove(this.id)">B3</button>
 
     <!-- JS -->
+    <script src="js/list.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

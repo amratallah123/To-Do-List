@@ -2,12 +2,13 @@ const toggleBtn = document.getElementsByClassName("icon-resp");
 const btn = document.getElementsByName("fas");
 const sidebar = document.getElementsByClassName("sidebar");
 const hideUl = document.querySelectorAll("all-ul li");
-const addBtn = document.getElementsByClassName("addBtn");
+
 const list = document.getElementsByClassName("list");
 const list1 = document.getElementById("cList1");
 const list2 = document.getElementById("cList2");
 const list3 = document.getElementById("cList3");
 const counter = document.getElementsByClassName("counter");
+let i = 0;
 
 toggleBtn[0].addEventListener("click", function () {
   sidebar[0].classList.toggle("show-sidebar");
@@ -16,20 +17,6 @@ toggleBtn[0].addEventListener("click", function () {
 counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
 counter[1].innerHTML = `<h4>${list[1].childElementCount}<h4>`;
 counter[2].innerHTML = `<h4>${list[2].childElementCount}<h4>`;
-
-addBtn[0].addEventListener("click", function () {
-  list[0].innerHTML += `<input type="text" placeholder="new task" />`;
-  // زيادة الكاونتر مع كل مرة يضاف فيها عنصر
-  counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
-});
-addBtn[1].addEventListener("click", function () {
-  list[1].innerHTML += `<input type="text" placeholder="new task" />`;
-  counter[1].innerHTML = `<h4>${list[1].childElementCount}<h4>`;
-});
-addBtn[2].addEventListener("click", function () {
-  list[2].innerHTML += `<input type="text" placeholder="new task" />`;
-  counter[2].innerHTML = `<h4>${list[2].childElementCount}<h4>`;
-});
 
 // تفعيل لإالسايد بار
 const done = document.getElementById("done");
@@ -81,3 +68,26 @@ allTasks.addEventListener("click", function () {
     sidebar[0].classList.toggle("show-sidebar");
   }
 });
+
+const addBtn = document.getElementsByClassName("addBtn");
+const l1 = document.getElementsByClassName("l1");
+addBtn[0].addEventListener("click", function () {
+  l1[0].innerHTML += `<div class="element">
+                <input type="text" placeholder="start task" class="elName" />
+
+                <button class="trash" id="0">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button class="add"><i class="fas fa-plus"></i></button>
+                <button class="btnel">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>`;
+});
+
+for (let index = 0; index < trashs.length; index++) {
+  trashs[index].addEventListener("click", function () {
+    let trashs = document.querySelectorAll(".trash");
+    trashs[index].parentNode.remove();
+  });
+}
