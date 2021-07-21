@@ -238,11 +238,16 @@ main section .containerList .state {
   border-radius: 5px;
 }
 .list .element {
-  height: 40px;
-  width: 90%;
   margin: 10px auto;
-  border-radius: 5px;
-  margin-left: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6.5px;
+  margin-bottom: 8px;
+  border-radius: 7px;
+  font-weight: bold;
+  position: relative;
+  width: 90%;
 }
 .element button {
   border: none;
@@ -275,14 +280,15 @@ main section .containerList .state {
 }
 .addBtn {
   width: 90%;
-  margin: 10px auto auto;
-  height: 40px;
   background-color: white;
-  margin-left: 17px;
-  margin-bottom: 10px;
-  outline: none;
-  border-radius: 5px;
-  border-style: none;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  border-radius: 7px;
+  font-size: 25px;
+  cursor: pointer;
 }
 .addBtn i {
   font-size: 30px;
@@ -300,7 +306,7 @@ main section .containerList .state {
   color: #74c3f8;
 }
 .change-width {
-  width: 700px;
+  width: 1000px;
 }
 .hide-list {
   display: none;
@@ -435,4 +441,145 @@ main section .containerList .state {
 }
 .clear-btn:hover {
   color: var(--clr-red-dark);
+}
+.filter {
+  filter: blur(5px);
+}
+
+.box-data {
+  width: 0;
+  max-width: 500px;
+  overflow: hidden;
+  height: auto;
+  position: fixed;
+  top: 100%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 247px;
+  border-radius: 8px;
+  z-index: 9999;
+  transition: all 0.3s;
+}
+.show-box-data {
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  height: 225px;
+  border: solid 1px #ededed;
+}
+.box-data .box-input {
+  padding: 20px;
+}
+.box-data .box-input i,
+.box-data .box-input input,
+.box-data .box-input button {
+  display: block;
+  margin: 30px auto;
+  height: 39px;
+}
+.box-data .box-input i {
+  color: #ff5e5e;
+  font-size: 26px;
+  float: right;
+  margin: 0;
+  margin-bottom: 20px;
+  height: 27px;
+}
+.box-data .box-input input {
+  border: solid 2px #1b4965;
+  border-radius: 8px;
+  padding: 0 15px;
+  color: #1b4965;
+}
+.box-input button {
+  background-color: #1b4965;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+.box-data .box-input input,
+.box-data .box-input button {
+  width: 100%;
+}
+
+.hide-select {
+  display: none;
+}
+.hide-selectBtn {
+  display: none;
+}
+
+.list select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 100px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+.select-box {
+  width: 0;
+  max-width: 500px;
+  overflow: hidden;
+  height: auto;
+  position: fixed;
+  top: 100%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 247px;
+  border-radius: 8px;
+  z-index: 9999;
+  transition: all 0.3s;
+}
+.show-select-box {
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  border: solid 1px #ededed;
+}
+.select-box .box-input {
+  padding: 20px;
+  display: inline;
+  margin: 10px auto;
+}
+.select-box .box-input i,
+.select-box .box-input input,
+.select-box .box-input button {
+  margin: 30px auto;
+  height: 39px;
+}
+.select-box .box-input i {
+  color: #ff5e5e;
+  font-size: 26px;
+  float: right;
+  margin: 0;
+  margin-bottom: 20px;
+  height: 27px;
+}
+.select-box .box-input input {
+  border: solid 2px #1b4965;
+  border-radius: 8px;
+  padding: 0 15px;
+  color: #1b4965;
+}
+.select-box button {
+  background-color: #1b4965;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+.select-box .box-input input,
+.select-box .box-input button {
+  width: 25%;
+}
+
+.hide-not-change {
+  display: none;
 }
