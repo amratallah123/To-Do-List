@@ -68,71 +68,6 @@ allTasks.addEventListener("click", function () {
   }
 });
 
-// add and delete
-
-let i = 0;
-
-// addBtn[0].addEventListener("click", function () {
-//   lists[0].innerHTML += `<div class="element" id="${i}">
-//                 <input type="text" placeholder="start task" class="elName" />
-
-//                 <button class="trash1" id="${i}" onclick="remove1(this.id)">
-//                   <i class="fas fa-trash"></i>
-//                 </button>
-//                 <button class="add"><i class="fas fa-plus"></i></button>
-//                 <button class="btnel">
-//                   <i class="fas fa-ellipsis-h"></i>
-//                 </button>
-//               </div>`;
-// });
-// let j = 0;
-// addBtn[1].addEventListener("click", function () {
-//   lists[1].innerHTML += `<div class="element" id="${j}">
-//                 <input type="text" placeholder="start task" class="elName" />
-
-//                 <button class="trash2" id="${j}" onclick="remove2(this.id)">
-//                   <i class="fas fa-trash"></i>
-//                 </button>
-//                 <button class="add"><i class="fas fa-plus"></i></button>
-//                 <button class="btnel">
-//                   <i class="fas fa-ellipsis-h"></i>
-//                 </button>
-//               </div>`;
-// });
-// let k = 0;
-// addBtn[2].addEventListener("click", function () {
-//   let x = (Math.random() * 100000).toFixed(0);
-//   debugger;
-//   lists[2].innerHTML += `<div class="element" >
-//                 <input type="text" placeholder="start task" class="elName"   />
-
-//                 <button class="trash3" id="${x}" onclick="remove3(${this.id})">
-//                   <i class="fas fa-trash"></i>
-//                 </button>
-//                 <button class="add"><i class="fas fa-plus" onclick="adding(this.id)"></i></button>
-//                 <button class="btnel">
-//                   <i class="fas fa-ellipsis-h"></i>
-//                 </button>
-//               </div>`;
-// });
-
-// const trash1 = document.getElementsByClassName("trash1");
-// const trash2 = document.getElementsByClassName("trash2");
-// const trash3 = document.getElementsByClassName("trash3");
-
-// function remove1(index) {
-//   trash1[index].parentNode.remove();
-//   i--;
-// }
-// function remove2(index) {
-//   trash2[index].parentNode.remove();
-//   j--;
-// }
-// function remove3(index) {
-//   debugger;
-//   trash3[index].parentNode.remove();
-// }
-
 let randomm;
 let id = 0;
 let Doing = new Map();
@@ -337,8 +272,71 @@ function changeState1(id) {
 
   toDone[0].onclick = function () {
     let element = NoStatus.get(id);
-    Done.set(id, element);
     NoStatus.delete(id);
+    Done.set(id, element);
+
+    lists[0].innerHTML = ``;
+    NoStatus.forEach((element, key) => {
+      draw1(lists[0], key, element);
+    });
+    lists[2].innerHTML = ``;
+    Done.forEach((element, key) => {
+      draw3(lists[2], key, element);
+    });
+
+    main[0].classList.toggle("filter");
+    selectBox[0].classList.toggle("show-select-box");
+    counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
+  };
+  toDoing[0].onclick = function () {
+    let element = NoStatus.get(id);
+    NoStatus.delete(id);
+    Doing.set(id, element);
+    lists[0].innerHTML = ``;
+    NoStatus.forEach((element, key) => {
+      draw1(lists[0], key, element);
+    });
+    lists[1].innerHTML = ``;
+    Doing.forEach((element, key) => {
+      draw2(lists[1], key, element);
+    });
+
+    main[0].classList.toggle("filter");
+    selectBox[0].classList.toggle("show-select-box");
+    counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
+  };
+}
+function changeState3(id) {
+  selectBox[0].classList.toggle("show-select-box");
+  main[0].classList.toggle("filter");
+  let closeSelectBox = document.getElementById("close-select-box");
+  closeSelectBox.onclick = function () {
+    main[0].classList.toggle("filter");
+    selectBox[0].classList.toggle("show-select-box");
+  };
+  let toDoing = document.getElementsByClassName("to-doing");
+  let toNoStatus = document.getElementsByClassName("to-no-status");
+  toDoing[0].onclick = function () {
+    let elem = Done.get(id);
+
+    Done.delete(id);
+    Doing.set(id, element);
+    lists[1].innerHTML = ``;
+    Doing.forEach((element, key) => {
+      draw2(lists[1], key, element);
+    });
+    lists[2].innerHTML = ``;
+    Done.forEach((element, key) => {
+      draw3(lists[2], key, element);
+    });
+
+    main[0].classList.toggle("filter");
+    selectBox[0].classList.toggle("show-select-box");
+  };
+  toNoStatus[0].onclick = function () {
+    let element = Done.get(id);
+    NoStatus.set(id, element);
+    Done.delete(id);
     lists[2].innerHTML = ``;
     Done.forEach((element, key) => {
       draw3(lists[2], key, element);
@@ -349,25 +347,9 @@ function changeState1(id) {
     });
     main[0].classList.toggle("filter");
     selectBox[0].classList.toggle("show-select-box");
-    counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
-  };
-  toDoing[0].onclick = function () {
-    let element = NoStatus.get(id);
-    Doing.set(id, element);
-    NoStatus.delete(id);
-    lists[1].innerHTML = ``;
-    Doing.forEach((element, key) => {
-      draw3(lists[1], key, element);
-    });
-    lists[0].innerHTML = ``;
-    NoStatus.forEach((element, key) => {
-      draw1(lists[0], key, element);
-    });
-    main[0].classList.toggle("filter");
-    selectBox[0].classList.toggle("show-select-box");
-    counter[0].innerHTML = `<h4>${list[0].childElementCount}<h4>`;
   };
 }
+
 function changeState2(id) {
   selectBox[0].classList.toggle("show-select-box");
   main[0].classList.toggle("filter");
@@ -410,47 +392,5 @@ function changeState2(id) {
     main[0].classList.toggle("filter");
     selectBox[0].classList.toggle("show-select-box");
     counter[1].innerHTML = `<h4>${list[1].childElementCount}<h4>`;
-  };
-}
-
-function changeState3(id) {
-  selectBox[0].classList.toggle("show-select-box");
-  main[0].classList.toggle("filter");
-  let closeSelectBox = document.getElementById("close-select-box");
-  closeSelectBox.onclick = function () {
-    main[0].classList.toggle("filter");
-    selectBox[0].classList.toggle("show-select-box");
-  };
-  let toDoing = document.getElementsByClassName("to-doing");
-  let toNoStatus = document.getElementsByClassName("to-no-status");
-  toDoing[0].onclick = function () {
-    let element = Done.get(id);
-    Doing.set(id, element);
-    Done.delete(id);
-    lists[2].innerHTML = ``;
-    Done.forEach((element, key) => {
-      draw3(lists[2], key, element);
-    });
-    lists[1].innerHTML = ``;
-    Doing.forEach((element, key) => {
-      draw2(lists[1], key, element);
-    });
-    main[0].classList.toggle("filter");
-    selectBox[0].classList.toggle("show-select-box");
-  };
-  toNoStatus[0].onclick = function () {
-    let element = Done.get(id);
-    NoStatus.set(id, element);
-    Done.delete(id);
-    lists[2].innerHTML = ``;
-    Done.forEach((element, key) => {
-      draw3(lists[2], key, element);
-    });
-    lists[0].innerHTML = ``;
-    NoStatus.forEach((element, key) => {
-      draw1(lists[0], key, element);
-    });
-    main[0].classList.toggle("filter");
-    selectBox[0].classList.toggle("show-select-box");
   };
 }
