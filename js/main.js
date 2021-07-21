@@ -218,16 +218,16 @@ let draw3 = (list, id, taskName) => {
     </button>
   </li>`;
 };
-let searchInputValue = document.getElementById("search");
+let searchInput = document.getElementById("search");
 search.addEventListener("click", function (e) {
   const filterResults1 = Array.from(NoStatus).filter((element) =>
-    element[1].includes(searchInputValue.value)
+    element[1].includes(searchInput.value)
   );
   const filterResults2 = Array.from(Doing).filter((element) =>
-    element[1].includes(searchInputValue.value)
+    element[1].includes(searchInput.value)
   );
   const filterResults3 = Array.from(Done).filter((element) =>
-    element[1].includes(searchInputValue.value)
+    element[1].includes(searchInput.value)
   );
   lists[0].innerHTML = ``;
   filterResults1.map((res) => {
@@ -256,6 +256,7 @@ closeSearch[0].addEventListener("click", function () {
   Done.forEach((element, key) => {
     draw3(lists[2], key, element);
   });
+  searchInput.value = ``;
 });
 
 let selectBox = document.getElementsByClassName("select-box");
