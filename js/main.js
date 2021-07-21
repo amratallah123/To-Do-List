@@ -317,7 +317,7 @@ function changeState3(id) {
   let toDoing = document.getElementsByClassName("to-doing");
   let toNoStatus = document.getElementsByClassName("to-no-status");
   toDoing[0].onclick = function () {
-    let elem = Done.get(id);
+    let element = Done.get(id);
 
     Done.delete(id);
     Doing.set(id, element);
