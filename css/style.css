@@ -249,6 +249,9 @@ main section .containerList .state {
   position: relative;
   width: 90%;
 }
+.list .element .elName {
+  overflow: hidden;
+}
 .element button {
   border: none;
   background-color: white;
