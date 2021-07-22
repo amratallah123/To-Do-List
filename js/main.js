@@ -177,8 +177,6 @@ closeData.onclick = function () {
   main[0].classList.toggle("filter");
 };
 
-let search = document.getElementById("confirm-search");
-
 let draw1 = (list, id, taskName) => {
   list.innerHTML += `<li class="element" id="${id}">
     <p type="text" class="elName">${taskName}</p>
@@ -219,7 +217,7 @@ let draw3 = (list, id, taskName) => {
   </li>`;
 };
 let searchInput = document.getElementById("search");
-search.addEventListener("click", function (e) {
+search.addEventListener("input", function (e) {
   const filterResults1 = Array.from(NoStatus).filter((element) =>
     element[1].includes(searchInput.value)
   );
