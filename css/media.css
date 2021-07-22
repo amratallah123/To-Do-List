@@ -35,13 +35,25 @@
   main section .containerList {
     width: 90%;
     margin: 20px auto;
-    width: 400px;
+    width: 300px;
     max-width: 400px;
   }
 }
 @media (max-width: 992px) {
+  main section .containerList {
+    width: 90%;
+    min-width: 200px;
+  }
 }
 @media (max-width: 768px) {
+  main section .containerList {
+    width: 90%;
+    min-width: 200px;
+  }
 }
 @media (max-width: 600px) {
+  main section .containerList {
+    width: 90%;
+    min-width: 200px;
+  }
 }

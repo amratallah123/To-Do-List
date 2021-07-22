@@ -192,7 +192,7 @@ main section .containerLists {
 main section .containerList {
   min-height: 400px;
   height: auto;
-  width: 350px;
+  width: 400px;
   max-width: 1000px;
   background-color: white;
   border-radius: 5px;
@@ -509,18 +509,8 @@ main section .containerList .state {
 .hide-selectBtn {
   display: none;
 }
-
-.list select {
-  background-color: #0563af;
-  color: white;
-  padding: 12px;
-  width: 100px;
-  border: none;
-  font-size: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
-  outline: none;
+.hide-not-change {
+  display: none;
 }
 .select-box {
   width: 0;
@@ -537,22 +527,20 @@ main section .containerList .state {
   z-index: 9999;
   transition: all 0.3s;
 }
+
 .show-select-box {
   width: 50%;
   top: 50%;
   left: 50%;
-  height: 100px;
+  height: 225px;
   border: solid 1px #ededed;
 }
 .select-box .box-input {
   padding: 20px;
-  display: inline;
-  margin: 10px auto;
 }
 .select-box .box-input i,
-.select-box .box-input input,
 .select-box .box-input button {
-  margin: 30px auto;
+  margin: 10px auto;
   height: 39px;
 }
 .select-box .box-input i {
@@ -563,23 +551,7 @@ main section .containerList .state {
   margin-bottom: 20px;
   height: 27px;
 }
-.select-box .box-input input {
-  border: solid 2px #1b4965;
-  border-radius: 8px;
-  padding: 0 15px;
-  color: #1b4965;
-}
-.select-box button {
-  background-color: #1b4965;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-}
-.select-box .box-input input,
-.select-box .box-input button {
-  width: 25%;
-}
 
-.hide-not-change {
-  display: none;
+.select-box .box-input button {
+  width: 100%;
 }

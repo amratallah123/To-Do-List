@@ -258,18 +258,23 @@ closeSearch[0].addEventListener("click", function () {
   });
   searchInput.value = ``;
 });
-
+let toDone = document.getElementsByClassName("to-done");
+let toNoStatus = document.getElementsByClassName("to-no-status");
+let toDoing = document.getElementsByClassName("to-doing");
 let selectBox = document.getElementsByClassName("select-box");
+
 function changeState1(id) {
+  toNoStatus[0].classList.add("hide-not-change");
+  toDoing[0].classList.remove("hide-not-change");
+  toDone[0].classList.remove("hide-not-change");
   selectBox[0].classList.toggle("show-select-box");
   main[0].classList.toggle("filter");
+
   let closeSelectBox = document.getElementById("close-select-box");
   closeSelectBox.onclick = function () {
     main[0].classList.toggle("filter");
     selectBox[0].classList.toggle("show-select-box");
   };
-  let toDone = document.getElementsByClassName("to-done");
-  let toDoing = document.getElementsByClassName("to-doing");
 
   toDone[0].onclick = function () {
     let element = NoStatus.get(id);
@@ -308,6 +313,9 @@ function changeState1(id) {
   };
 }
 function changeState3(id) {
+  toDone[0].classList.add("hide-not-change");
+  toNoStatus[0].classList.remove("hide-not-change");
+  toDoing[0].classList.remove("hide-not-change");
   selectBox[0].classList.toggle("show-select-box");
   main[0].classList.toggle("filter");
   let closeSelectBox = document.getElementById("close-select-box");
@@ -315,8 +323,7 @@ function changeState3(id) {
     main[0].classList.toggle("filter");
     selectBox[0].classList.toggle("show-select-box");
   };
-  let toDoing = document.getElementsByClassName("to-doing");
-  let toNoStatus = document.getElementsByClassName("to-no-status");
+
   toDoing[0].onclick = function () {
     let element = Done.get(id);
 
@@ -352,6 +359,9 @@ function changeState3(id) {
 }
 
 function changeState2(id) {
+  toDone[0].classList.remove("hide-not-change");
+  toNoStatus[0].classList.remove("hide-not-change");
+  toDoing[0].classList.add("hide-not-change");
   selectBox[0].classList.toggle("show-select-box");
   main[0].classList.toggle("filter");
   let closeSelectBox = document.getElementById("close-select-box");
@@ -359,9 +369,7 @@ function changeState2(id) {
     main[0].classList.toggle("filter");
     selectBox[0].classList.toggle("show-select-box");
   };
-  let toDone = document.getElementsByClassName("to-done");
 
-  let toNoStatus = document.getElementsByClassName("to-no-status");
   toDone[0].onclick = function () {
     let element = Doing.get(id);
     Done.set(id, element);
